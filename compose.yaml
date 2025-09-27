@@ -23,7 +23,7 @@ services:
       - db
     restart: unless-stopped
     networks:
-      - laravel
+      - n8nIntegration
 
   db:
     image: postgres:12
@@ -35,7 +35,7 @@ services:
       - POSTGRES_DB=n8n
     restart: unless-stopped
     networks:
-      - laravel
+      - n8nIntegration
 networks:
-  laravel:
+  n8nIntegration:
     external: true
