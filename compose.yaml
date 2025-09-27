@@ -17,6 +17,8 @@ services:
       - DB_POSTGRESDB_PASSWORD=n8n
       - NODE_FUNCTION_ALLOW_EXTERNAL=axios,qs
       - N8N_TIMEZONE=Europe/Moscow
+      - N8N_BASE_URL=https://exampreparation.ru/n8n/
+      - WEBHOOK_URL=https://exampreparation.ru/n8n/
     depends_on:
       - db
     restart: unless-stopped
@@ -30,3 +32,7 @@ services:
       - POSTGRES_PASSWORD=n8n
       - POSTGRES_DB=n8n
     restart: unless-stopped
+networks:
+  n8n_internal:
+  laravel:
+    external: true
